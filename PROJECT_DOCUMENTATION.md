@@ -50,6 +50,10 @@ Postconditions: Game starts, Card is added to pool successfully, Pool is changed
     First code here
 
 ## Review
-    Sprint 1 review questions
+    System meets all requirements set for sprint 1
+    Performance is high, as it is currently a simple program and doesn't use many resources
+    Code needs to be organised better for future sprints, and I need to catch up
+    Sould bring in function use for sprint two to make it easier to program
+
 
 # Sprint 2
