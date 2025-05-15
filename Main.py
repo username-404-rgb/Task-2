@@ -30,10 +30,11 @@ def main():
             main()
         else:
             print('Try again')
+            main()
     elif input1 == '2':
-        print('Card Maker')
+        print('Card Maker') # For Sprint 2
     elif input1 == '3':
-        print('View Cards')
+        print('View Cards') # For Sprint 2
     elif input1 != '4':
         print ('Error, Try Again')
         main()
