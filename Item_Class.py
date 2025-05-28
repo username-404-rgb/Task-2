@@ -12,4 +12,4 @@ class Item:
 		else:
 			raise ValueError("Name must be a string.")
 
-lantern = Item('lantern', 'false')
+
