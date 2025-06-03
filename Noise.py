@@ -1,7 +1,7 @@
 import time # Allows for waits
 import Second_Area as SA
 
-noise = 0                                   # Serves as a noise mechanic, if it's too high, kills the player
+noise = 0 # Serves as a noise mechanic, if it's too high, kills the player
 
 def noisy_action():
     global noise
@@ -25,6 +25,8 @@ def too_loud():                                                                 
     
     choice = int(input('Enter choice: '))
     if choice == 1:
+        global noise
+        noise = 0
         SA.main_int()
     else:
         print('Enter a valid number, silly!')
