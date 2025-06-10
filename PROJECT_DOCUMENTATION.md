@@ -114,3 +114,38 @@ Postconditions: Game starts, Card is added to pool successfully, Pool is changed
 
 ## Review
     Need to restructure project for sake of making a functioinal one in the alloted time
+
+# Sprint 3
+
+## Design
+![UML Class Diagram](images/UMLClassDiagram.png)
+
+## Build and Test
+    #from Item_Class import * # Imports item class
+    #from First_Area import * # Imports the first areas of the game
+    import Item_Class as IC
+    import First_Area as FA
+    import Second_Area as SA
+
+    #This paragraph is a list of various 'items' for the game
+    lantern = IC.Item('lantern', 'false')
+    has_been_start = IC.Item('started', 'false')     # Use of item class to store value of whether or not the player has been to the 'wake_up' area
+    first_entered = IC.Item('entered', 'false')    # Has the player entered the mansion
+    knife = IC.Item('knife', 'false')
+    noise = 0                                       # Noise mechanic in the second area
+
+    # Temporarily putting 'start_area' as a comment for easy testing of the second area
+
+    #FA.start_area()   # Starts the game 
+    #print('\n')
+    SA.main_int() # Runs the second area, will change back to 'enter_mansion'
+
+## Review
+
+System could use optimisations in formatting, but should be sufficient in other requirements set.
+
+Program reads inputs successfully, however I can't remove options from scenes, so I have settled for hiding the option, such that a player wouldn't know they can collect an item multiple times.
+
+Code is difficult to read, but I am able to parse it well enough for the development of the program. Structure could use work as I don't have a direct system for organisation of code, leading to disorganised code blocks.
+
+Improvment of code structure would be good, however I think I will just work on finishing the second area first.
