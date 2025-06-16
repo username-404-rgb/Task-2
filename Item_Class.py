@@ -7,9 +7,9 @@ class Item:
 		return self.collected
 
 	def set_collected(self, new_name):
-		if isinstance(new_name, str):
+		if isinstance(new_name, bool):
 			self.collected = new_name
 		else:
-			raise ValueError("Name must be a string.")
+			raise ValueError("Name must be a bool.")
 
 

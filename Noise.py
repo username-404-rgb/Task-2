@@ -1,5 +1,5 @@
 import time # Allows for waits
-import Second_Area as SA
+
 
 noise = 0 # Serves as a noise mechanic, if it's too high, kills the player
 

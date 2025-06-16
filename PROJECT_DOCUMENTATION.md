@@ -54,6 +54,7 @@ Postconditions: Game starts, Card is added to pool successfully, Pool is changed
 ![Story Board 5](images/storyboard5.png)
 
 ## Build and Test
+```py
     def main():
         print('')
         print('Start Game ~ (1)')
@@ -95,7 +96,7 @@ Postconditions: Game starts, Card is added to pool successfully, Pool is changed
         else:
             print('')
     main()
-
+```
 ## Review
     System meets all requirements set for sprint 1
     Performance is high, as it is currently a simple program and doesn't use many resources
@@ -121,6 +122,7 @@ Postconditions: Game starts, Card is added to pool successfully, Pool is changed
 ![UML Class Diagram](images/UMLClassDiagram.png)
 
 ## Build and Test
+```py
     #from Item_Class import * # Imports item class
     #from First_Area import * # Imports the first areas of the game
     import Item_Class as IC
@@ -139,6 +141,7 @@ Postconditions: Game starts, Card is added to pool successfully, Pool is changed
     #FA.start_area()   # Starts the game 
     #print('\n')
     SA.main_int() # Runs the second area, will change back to 'enter_mansion'
+```
 
 ## Review
 
@@ -149,3 +152,44 @@ Program reads inputs successfully, however I can't remove options from scenes, s
 Code is difficult to read, but I am able to parse it well enough for the development of the program. Structure could use work as I don't have a direct system for organisation of code, leading to disorganised code blocks.
 
 Improvment of code structure would be good, however I think I will just work on finishing the second area first.
+
+# Sprint 3
+
+## Design
+
+### Potential Improvements
+Actual locks on commands
+Currently any options the player isn't meant to repeat, e.g. collecting an item, are hidden rather than actually prevented
+I'll do this through checks within each command, rather than just in the scene descriptions
+
+## Build and Test
+An example of such code
+
+```py
+def left_path():
+    lantern_check = lantern.get_collected()
+    if lantern_check == 'false':                                            # If you grabbed the lantern...
+        print('You go down the bright path, stopping at the lantern')
+    else:                                                                   # Otherwise...
+        print('The post where the lantern was hung from sits silent and still')
+    print('Just infront of you stands an insurmountable boulder, too wide to go around')    # Either way...
+    if lantern_check == 'false':                                            # If you grabbed the lantern...
+        print('1 - Return the way you came, or\n'
+              '2 - Grab the lantern')
+    else:                                                                   # Otherwise...
+        print('1 - Return the way you came')
+
+    choice = int(input('Enter choice: '))
+    if choice == 1:
+        start_area()
+    elif choice == 2:
+        if lantern_check == 'true':            # Checks if the lantern has already been collected, and if it has, has unique dialouge
+            print('The post is wedged too firmly in the ground to take')
+            left_path()
+        else:
+            print('You grab the lantern, now realising how cold you are as your fingers begin to warm')
+            lantern.set_collected('true')
+            left_path()
+    else:
+        print('Enter a valid number, silly!')
+'''
