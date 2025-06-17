@@ -290,8 +290,7 @@ def exit():
     print('And just barely escape')
     time.sleep(2)
     print(' ! Y O U   W I N ! ')
-    print('Press 1 to')
-    print('')
+    print('Press 1 to play again')
     print('')
     
     choice = int(input(''))
