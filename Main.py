@@ -12,6 +12,6 @@ noise = 0                                       # Noise mechanic in the second a
 
 # Temporarily putting 'start_area' as a comment for easy testing of the second area
 
-#FA.start_area()   # Starts the game 
-#time.sleep(7)
+FA.start_area()   # Starts the game 
+time.sleep(7)
 SA.main_int() # Runs the second area, will change back to 'enter_mansion'

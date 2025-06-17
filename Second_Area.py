@@ -1,6 +1,6 @@
 from Item_Class import * # Imports item class
-from Noise import *      # Imports the noise mechanic
 import time # Allows for waits
+import First_Area as FA
 
 #    elif choice == 5:
 #        main_int()
@@ -12,6 +12,37 @@ base_key = Item('key', False)
 trap_opened = Item('Trap Door', False)
 mousetrap = Item('Mouse Trap', False)
 f2 = Item('Has been to second floor', False)
+entered_basement = Item('Has been to basement', False)
+
+noise = 0 # Serves as a noise mechanic, if it's too high, kills the player
+
+def noisy_action():
+    global noise
+    noise = noise + 1
+    if noise == 1:
+        first_noise()
+    if noise >= 3:
+        too_loud()
+
+def first_noise():                                                                                  # When noise is one
+    time.sleep(2)                                                                                   # Wait 2 seconds, for suspense
+    print('You hear a noise from elsewhere in the house, you are not alone')
+    time.sleep(2)
+
+def too_loud():                                                                                     #If noise goes above three
+    print('Suddenly, you feel claws on your neck, lifting you far above the ground\n'
+          'You reach for anything in your pockets, but cant reach anything right now\n'
+          'As your vision darkens you hear a sickening snap\n'
+          'You were killed\n'
+          '1 - Try again')
+    
+    choice = int(input('Enter choice: '))
+    if choice == 1:
+        global noise
+        noise = 0
+        main_int()
+    else:
+        print('Enter a valid number, silly!')
 
 def enter_mansion():           
     print('You find yourself outside a dark mansion\n'
@@ -147,11 +178,19 @@ def trapdoor():
             trapdoor()
 
     elif choice == 4:
-        print('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
+        if trap_check == False:
+            print('The door is still colsed to you')
+        else:
+            print('You head down to the basement')
+            basement()
+
+    elif choice == 69:
+        print('You head down to the basement')
+        basement()
+
     else:
         print('Enter a valid number, silly!')
-
-
+    
 def stair_closet():
     print('You open the door, and struggle to see for a second as you adjust to the dark')
     check_mousetrap = mousetrap.get_collected()
@@ -194,4 +233,67 @@ def stair_closet():
     else:
         print('Enter a valid number, silly!')
 
-main_int()
+def basement():
+    basement = entered_basement.get_collected()
+    if basement == False:
+        time.sleep(2)
+        print('You walk forward slowly through the dark of the basement')
+        time.sleep(2)
+        print('You feel around the walls to get a grip on your surroundings')
+        time.sleep(2)
+        print('What you first reach for feels like a head, and you leap backwards instinctivly')
+        time.sleep(2)
+        print('You fall over and find youself stting on something wet')
+        time.sleep(2)
+        print('You see a glimer of light coming from somewhere in the room')
+        time.sleep(2)
+        print('You go up to it, and find your way barred by rope you must cut')
+        time.sleep(2)
+        entered_basement.set_collected(True)
+    print('1 - Return to the house')
+    knife_check = knife.get_collected()
+    if knife_check == True:
+        print('2 - Cut open the ropes')
+
+    choice = int(input('Enter choice: '))
+    if choice == 1:
+        trapdoor()
+    elif choice == 2:
+        if knife_check == False:
+            print('The ropes are too strong to tear at with your hands')
+            basement()
+        else:
+            exit()
+    else:
+        print('Enter a valid number, silly!')
+
+def exit(): 
+    print('You take out the knife')
+    time.sleep(2)
+    print('You begin cutting the ropes')
+    time.sleep(2)
+    print('Behind you you hear something coming')
+    time.sleep(2)
+    print('You hear it aproaching you')
+    time.sleep(2)
+    print('As you start cutting the last rope you turn and see it')
+    time.sleep(2)
+    print("The eyes shine a brilliant white, it's teeth shine brighter")
+    time.sleep(2)
+    print('...human teeth')
+    time.sleep(2)
+    print('You cut the last rope and turn back')
+    time.sleep(2)
+    print('You start climing out the window')
+    time.sleep(2)
+    noisy_action()
+    print('And just barely escape')
+    time.sleep(2)
+    print(' ! Y O U   W I N ! ')
+    print('Press 1 to')
+    print('')
+    print('')
+    
+    choice = int(input(''))
+    if choice == 1:
+        FA.start_area()
