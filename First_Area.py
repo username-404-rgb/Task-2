@@ -1,5 +1,5 @@
 from Item_Class import * # Imports item class
-
+import time
 
 #This paragraph is a list of various 'items' for the first area
 lantern = Item('lantern', False)
@@ -64,7 +64,7 @@ def right_path():
     if lantern_check == False:
           print('In the darkness you cannot read it, and you ignore it for now')
     else:
-          print('You hold up the lantern to the sign, ~They avoid the light~, it warns')          
+          print('You hold up the lantern to the sign, "They avoid the light", it warns')          
     print('Continuing, you hear a low noise, far away right now, you wonder if you should\n'
           '1 - Continue forward with apprehension, or\n'
           '2 - Turn around, and venture down the other path\n')
@@ -82,10 +82,13 @@ def right_path():
 
 def wolf_kill():
     print('\n'
-          'You walk forwards, and you realise what the noise is, too late\n'
-          'You try running back to the light but are just too slow\n'
-          'You were eaten by wolves\n'
-          '1 - Try again')
+          'You walk forwards, and you realise what the noise is, too late')
+    time.sleep(2)
+    print('You try running back to the light but are just too slow')
+    time.sleep(2)
+    print('You were swallowed whole in the darkness')
+    time.sleep(2)
+    print('1 - Try again')
 
     choice = int(input('Enter choice: '))
     if choice == 1:
@@ -95,8 +98,13 @@ def wolf_kill():
 
 def leaving_first_areas():
     print('\n'
-          'You start down the path careful not to let the lantern blow out\n'
-          'As you look to the tree line, you see the wolves, staring at you, waiting for your flame to die\n'
-          'And as it does, you run as fast as you can, dropping the lantern\n'
-          'As you run into a lit area, you look back to see the wolves running back to the forest\n'
-          'You barely survived')
+          'You start down the path careful not to let the lantern blow out\n')
+    time.sleep(2)
+    print('As you look to the tree line, you see them, staring at you, waiting for your flame to die')
+    time.sleep(2)
+    print('And as it does, you run as fast as you can, dropping the lantern')
+    time.sleep(2)
+    print('As you run into a lit area, you look back to see them running back to the forest')
+    time.sleep(2)
+    print('You barely survived this encounter')
+    time.sleep(2)

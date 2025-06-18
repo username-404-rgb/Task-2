@@ -31,7 +31,7 @@ def first_noise():                                                              
 
 def too_loud():                                                                                     #If noise goes above three
     print('Suddenly, you feel claws on your neck, lifting you far above the ground\n'
-          'You reach for anything in your pockets, but cant reach anything right now\n'
+          "You reach for anything in your pockets, but can't grab ahold in time\n"
           'As your vision darkens you hear a sickening snap\n'
           'You were killed\n'
           '1 - Try again')
@@ -92,7 +92,7 @@ def kitchen():
           print('A knife is embedded in the side of a pile of cans, you consider picking it up')
     else:
           print('The cans now lay on the floor, one leaking an unidentifiable black sludge')
-    print('Another hallway is now visible, though you cant tell where it leads\n'
+    print("Another hallway is now visible, though you can't tell where it leads\n"
           '1 - Go back to the main hall\n'
           '2 - Go down the next hallway')
     if knife_check == False:                                                                          # Hides the 'grab knife' option if it has already been picked up
@@ -118,7 +118,7 @@ def kitchen():
 
 def kitchen_hall():
     print('You enter the hall, unable to see the end\n'
-          'As you keep walking you see torn paintings covering the walls, you cant even tell what they were of\n'
+          "As you keep walking you see torn paintings covering the walls, you can't even tell what they were of\n"
           'After a while, you see something at the end, and you smell it too')
     time.sleep(7)
     kitchen()

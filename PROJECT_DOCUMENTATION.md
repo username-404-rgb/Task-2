@@ -44,14 +44,17 @@ Main Flow:
 Postconditions: Game starts, Card is added to pool successfully, Pool is changed successfully, Program ends, Program still works
 
 ## Design
-    Data flow diagram / Story Boards
+    Data flow diagram
 ![Data Flow 0](images/dataflow0.png)
 ![Data Flow 0](images/dataflow1.png)
+    Story Boards
 ![Story Board 1](images/storyboard1.png)
 ![Story Board 2](images/storyboard2.png)
 ![Story Board 3](images/storyboard3.png)
 ![Story Board 4](images/storyboard4.png)
 ![Story Board 5](images/storyboard5.png)
+    Gantt chart for the project
+![Gantt Chart](images/Gantt_Chart.png)
 
 ## Build and Test
 ```py
@@ -165,19 +168,19 @@ I'll do this through checks within each command, rather than just in the scene d
 ## Build and Test
 An example of such code
 
-```py
-def left_path():
-    lantern_check = lantern.get_collected()
-    if lantern_check == 'false':                                            # If you grabbed the lantern...
-        print('You go down the bright path, stopping at the lantern')
-    else:                                                                   # Otherwise...
-        print('The post where the lantern was hung from sits silent and still')
-    print('Just infront of you stands an insurmountable boulder, too wide to go around')    # Either way...
-    if lantern_check == 'false':                                            # If you grabbed the lantern...
-        print('1 - Return the way you came, or\n'
-              '2 - Grab the lantern')
-    else:                                                                   # Otherwise...
-        print('1 - Return the way you came')
+
+    def left_path():
+        lantern_check = lantern.get_collected()
+        if lantern_check == 'false':                                            # If you grabbed the lantern...
+            print('You go down the bright path, stopping at the lantern')
+        else:                                                                   # Otherwise...
+            print('The post where the lantern was hung from sits silent and still')
+        print('Just infront of you stands an insurmountable boulder, too wide to go around')    # Either way...
+        if lantern_check == 'false':                                            # If you grabbed the lantern...
+            print('1 - Return the way you came, or\n'
+                '2 - Grab the lantern')
+        else:                                                                   # Otherwise...
+            print('1 - Return the way you came')
 
     choice = int(input('Enter choice: '))
     if choice == 1:
@@ -192,4 +195,12 @@ def left_path():
             left_path()
     else:
         print('Enter a valid number, silly!')
-'''
+
+
+## Review
+
+The program meets the requirements I've set, excluding the reading of all inputs, as not inputing a number results in the program stopping.
+
+It is not fair to compare my code against the use case previously described as the program has undergone a massive change in scope, making the former use case non functional
+
+The code is relatively well organised, though some areas liikely could have been formatted better had I had a structure in mind from the begining.
